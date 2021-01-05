@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div class="welcomeSection">
+      <h1>
+        Hey , welcome and thanks<br />
+        for visiting my page
+      </h1>
+    </div>
+    <div class="links">
+      <div route="/about">
+        <div class="content">
+          <h2>ABOUT ME</h2>
+        </div>
+        <video autoplay muted loop id="aboutVideo">
+          <source src="./videos/about.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div route="/contact">
+        <div class="content">
+          <h2>CONTACT ME</h2>
+        </div>
+        <video autoplay muted loop id="contactVideo">
+          <source src="./videos/contact.mp4" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+    <div id="view"></div>
+    <script>
+      function shrollDown(e) {
+        const element = document.getElementById("view");
+        element.scrollIntoView({ behavior: "smooth" });
+        setTimeout(() => {
+          const welcomeSection = document.querySelector(".welcomeSection");
+          if (welcomeSection) welcomeSection.remove();
+        }, 1000);
+      }
+      setTimeout(() => {
+        shrollDown();
+      }, 1000);
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+        //select app view
+        const view = document.getElementById("view");
+        //select all buttons
+        const activeRoutes = Array.from(
+          document.querySelectorAll(".links [route]")
+        );
+        //Function for navigation
+        function navigate(eEvent) {
+          document.body.classList.remove("hmm");
+          const route = eEvent.target.attributes[0].value;
+          const routInfo = myFirstRouter.routes.filter((r) => {
+            return r.path === route;
+          })[0];
+          !routInfo
+            ? alert("No content here")
+            : window.history.pushState({}, "name", routInfo.path);
+          routInfo.content()
+            ? (view.innerHTML = `<div class="${
+                routInfo.class
+              }">${routInfo.content()} </div>`)
+            : null;
+          homeNav();
+          if (window.location.pathname === "/about") popUp();
+        }
+        //click event trigers navigation on videos click
+        activeRoutes.forEach((route) => {
+          route.addEventListener("click", navigate, true);
+        });
+
+        //data constructor
+        const Router = function (name, routes) {
+          return {
+            name: name,
+            routes: routes,
+          };
+        };
+        const myFirstRouter = new Router("myFirstRouter", [
+          {
+            path: "/",
+            name: "Home",
+          },
+
+          {
+            path: "/about",
+            name: "About",
+            class: "about",
+            content: () => {
+              return ` <div class="goHome">&#8962</div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam delectus odit animi culpa sapiente officia adipisci quam sunt asperiores fuga deserunt illum officiis, repellat optio ipsum atque nam unde.</p>
+              <button id="modal-btn" class="button">Click Here</button>
+              <div id="my-modal" class="modal">
+              <div class="modal-content">
+              <div class="modal-header">
+              <span class="close">&times;</span>
+              <h2>Modal Header</h2>
+              </div>
+              <div class="modal-body">
+              <p>This is my modal</p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla repellendus nisi, sunt consectetur ipsa velit
+              repudiandae aperiam modi quisquam nihil nam asperiores doloremque mollitia dolor deleniti quibusdam nemo
+              commodi ab.</p>
+              </div>
+              <div class="modal-footer">
+              <h3>Modal Footer</h3>
+              </div>
+              </div>
+              </div>
+              `;
+            },
+          },
+          {
+            path: "/contact",
+            name: "Contact",
+            class: "contact",
+            content: () => {
+              return `<div class="goHome">&#8962</div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam delectus odit animi culpa sapiente officia adipisci quam sunt asperiores fuga deserunt illum officiis, repellat optio ipsum atque nam unde.</p>
+              `;
+            },
+          },
+        ]);
+        //Render the correct content based on pathname url
+        function renderPage() {
+          if (window.location.pathname === "/") {
+            return (view.innerHTML = "");
+          }
+          if (window.location.pathname === "/about") {
+            const welcomeSection = document.querySelector(".welcomeSection");
+            if (welcomeSection) {
+              welcomeSection.remove();
+            }
+            return (view.innerHTML = `<div class="${
+              myFirstRouter.routes[1].class
+            }">${myFirstRouter.routes[1].content()} </div>`);
+          }
+          if (window.location.pathname === "/contact") {
+            const welcomeSection = document.querySelector(".welcomeSection");
+            if (welcomeSection) {
+              welcomeSection.remove();
+            }
+            return (view.innerHTML = `<div class="${
+              myFirstRouter.routes[2].class
+            }">${myFirstRouter.routes[2].content()} </div>`);
+          } else alert("No content here");
+        }
+        renderPage();
+        //Link to homepage
+        function homeNav() {
+          const btns = document.querySelectorAll(".goHome");
+          for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener(
+              "click",
+              () => {
+                window.history.pushState({}, "name", "/");
+                document.body.classList.add("hmm");
+                renderPage();
+              },
+              false
+            );
+          }
+        }
+        homeNav();
+        //back browser button
+        function browserbutton() {
+          window.addEventListener("popstate", (event) => {
+            renderPage();
+            homeNav();
+            if (window.location.pathname === "/about") popUp()
+          });
+        }
+        browserbutton();
+        //modal
+        // Get DOM Elements
+        function popUp() {
+          const modal = document.querySelector("#my-modal");
+          const modalContent = document.querySelector(".modal-content");
+          const modalBtn = document.querySelector("#modal-btn");
+          const closeBtn = document.querySelector(".close");
+          // Events
+          modalBtn.addEventListener("click", openModal);
+          closeBtn.addEventListener("click", closeModal);
+          window.addEventListener("click", outsideClick);
+          // Open
+          function openModal() {
+            modal.style.display = "block";
+          }
+          // Close
+          function closeModal() {
+            modal.style.display = "none";
+          }
+          // Close If Outside Click
+          function outsideClick(e) {
+            if (e.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        }
+        if (window.location.pathname === "/about") {
+          popUp();
+        }
+
+      });
+    </script>
+  </body>
+</html>
