@@ -6,7 +6,7 @@ app.use(express.static(__dirname + '/public'))
 
 console.log("Server Started");
 
-app.get("/mpage/", function (req, res) {
+app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
 app.get("/about", function (req, res) {
