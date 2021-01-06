@@ -9,10 +9,10 @@ console.log("Server Started");
 app.get("/mpage/", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
-app.get("/mpage/about", function (req, res) {
+app.get("/about", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
-app.get("/mpage/contact", function (req, res) {
+app.get("/contact", function (req, res) {
     res.sendFile(__dirname + "/index.html");
 })
 
