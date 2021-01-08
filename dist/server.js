@@ -17,4 +17,4 @@ app.get("/contact", function (req, res) {
 })
 
 // start your server
-app.listen(3000, () => console.log('Server started at port 3000'))
+app.listen(3000, () => console.log('Server started at port 3000 http://localhost:3000'))
