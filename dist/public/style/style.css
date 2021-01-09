@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: #464646;
+  color: #ebebeb;
   overflow-x: hidden; /* Hide scrollbars */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -78,7 +78,7 @@ body {
   cursor: pointer;
 }
 .links > div:nth-child(1) {
-  border-right: 1px solid rgb(34, 34, 34);
+  border-right: 1px solid rgb(67, 67, 67);
   background-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.9) 20%,
@@ -89,7 +89,7 @@ body {
   );
 }
 .links > div:nth-child(2) {
-  border-left: 1px solid rgb(34, 34, 34);
+  border-left: 1px solid rgb(67, 67, 67);
   background-image: linear-gradient(
     to left,
     rgba(0, 0, 0, 0.9) 20%,
@@ -107,12 +107,10 @@ body {
 }
 .content h2 {
   color: #fff;
-  transition: 0.3s;
-}
-.links > div:hover .content h2 {
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-    0 0 80px rgb(0, 51, 255), 0 0 90px rgb(0, 38, 255),
-    0 0 100px rgb(0, 72, 255), 0 0 150px rgb(0, 60, 255);
+  padding: 2em;
+  font-size: 2.3em;
+  letter-spacing: 10px;
+  opacity: 0.6;
 }
 
 .about,
@@ -122,9 +120,10 @@ body {
   position: absolute;
   top: 0px;
   z-index: 2;
-  background-color: #f1f1f1;
+  background-color: #161616;
   animation: fadeInNewPage 1s;
 }
+
 @keyframes fadeInNewPage {
   0% {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -146,13 +145,20 @@ body {
   margin-left: 5px;
   display: inline-block;
   cursor: pointer;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px rgb(0, 51, 255), 0 0 90px rgb(0, 38, 255),
+    0 0 100px rgb(0, 72, 255), 0 0 150px rgb(0, 60, 255);
 }
 .contact p,
 .about p {
+  font-size: 1.5em;
+  margin: 5px 10px;
+  line-height: 1.8;
+}
+.contact h1,
+.about h1 {
   font-size: 2em;
   margin: 5px 10px;
-  font-size: 1.7em;
-  line-height: 1.8;
 }
 
 .button {
@@ -183,6 +189,7 @@ body {
 
 .modal-content {
   margin: 15vh auto;
+  background-color: rgba(16, 16, 16, 0.933);
   width: 80vw;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation: fadeInNewPage 0.5s;
@@ -194,16 +201,14 @@ body {
 }
 
 .modal-header {
-  background: rgb(220, 220, 220);
   padding: 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  border-bottom: 1px solid #4848484a;
+  border-bottom: 1px solid #d6d6d64a;
 }
 
 .modal-body {
   padding: 10px 20px;
-  background: rgb(220, 220, 220);
   display: flex;
 }
 .modal-body > div {
@@ -225,7 +230,6 @@ body {
   object-fit: cover;
 }
 .modal-footer {
-  background: rgb(220, 220, 220);
   padding: 10px;
   text-align: center;
   border-bottom-left-radius: 5px;
@@ -233,33 +237,30 @@ body {
 }
 
 .close {
-  color: rgb(38, 38, 38);
+  color: rgb(226, 226, 226);
   float: right;
-  font-size: 30px;
-  color: rgb(38, 38, 38);
+  font-size: 2em;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
+    0 0 80px rgb(0, 51, 255), 0 0 90px rgb(0, 38, 255),
+    0 0 100px rgb(0, 72, 255), 0 0 150px rgb(0, 60, 255);
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: rgb(214, 214, 214);
   text-decoration: none;
   cursor: pointer;
 }
 
 @media only screen and (max-width: 1024px) {
-  .welcomeSection h1 {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    font-size: 4em;
-    font-weight: 800;
-    letter-spacing: -3px;
-  }
   .modal-body {
     display: block;
   }
   .modal-body > div {
     width: 100%;
+  }
+  .content h2 {
+    font-size: 1.3em;
   }
 }
 @media only screen and (max-width: 380px) {
