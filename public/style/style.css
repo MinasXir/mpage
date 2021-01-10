@@ -9,13 +9,14 @@ body {
   perspective: 25px;
 }
 body::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+/* Add a thumb */
+body::-webkit-scrollbar-thumb {
+  background: #ffa500;
 }
 .intro {
   background: black;
@@ -145,9 +146,10 @@ body {
   margin-left: 5px;
   display: inline-block;
   cursor: pointer;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-    0 0 80px rgb(0, 51, 255), 0 0 90px rgb(0, 38, 255),
-    0 0 100px rgb(0, 72, 255), 0 0 150px rgb(0, 60, 255);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
+    0 0 40px rgb(255, 174, 0), 0 0 80px rgb(255, 102, 0),
+    0 0 90px rgb(255, 174, 0), 0 0 100px rgb(255, 136, 0),
+    0 0 150px rgb(255, 136, 0);
 }
 .contact p,
 .about p {
@@ -160,10 +162,49 @@ body {
   font-size: 2em;
   margin: 5px 10px;
 }
+.skills {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0px 10px 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills > div {
+  position: relative;
+  margin: 20px;
+  height: 120px;
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills p {
+  margin: 3px;
+  line-height: 1;
+}
+.skills h3 {
+  transform: rotate(270deg);
+  color: rgb(255, 165, 0);
+}
 
+.skills > div:before {
+  position: absolute;
+  content: "";
+  height: calc(100% + 10px);
+  width: calc(100% + 10px);
+  border: 8px dashed #ffff;
+  top: -13px;
+  left: -13px;
+  border-radius: inherit;
+}
+a {
+  color: #ffa500;
+  text-decoration: none;
+}
 .button {
-  background: #3a3a3a;
-  margin: 5px 10px;
+  background: #ffa500;
+  margin: 5px 0px 40px 10px;
   padding: 1em 2em;
   color: #fff;
   border: 0;
