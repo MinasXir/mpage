@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  color: #ebebeb;
+  color: #dddddd;
   overflow-x: hidden; /* Hide scrollbars */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -42,7 +42,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .intro-text {
-  color: rgb(233, 233, 233);
   font-size: 2rem;
 }
 
@@ -69,6 +68,7 @@ body::-webkit-scrollbar-thumb {
   -moz-transition: transform 0.5s;
   -o-transition: transform 0.5s;
 }
+
 .hmm {
   animation: fadeInNewPage 1s;
 }
@@ -80,25 +80,9 @@ body::-webkit-scrollbar-thumb {
 }
 .links > div:nth-child(1) {
   border-right: 1px solid rgb(67, 67, 67);
-  background-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.9) 20%,
-    rgba(0, 0, 0, 0.8) 20% 40%,
-    rgba(0, 0, 0, 0.6) 40% 60%,
-    rgba(0, 0, 0, 0.5) 60% 80%,
-    transparent 80%
-  );
 }
 .links > div:nth-child(2) {
   border-left: 1px solid rgb(67, 67, 67);
-  background-image: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.9) 20%,
-    rgba(0, 0, 0, 0.8) 20% 40%,
-    rgba(0, 0, 0, 0.6) 40% 60%,
-    rgba(0, 0, 0, 0.5) 60% 80%,
-    transparent 80%
-  );
 }
 .content {
   position: absolute;
@@ -107,11 +91,12 @@ body::-webkit-scrollbar-thumb {
   transform: translate(-50%, -50%);
 }
 .content h2 {
-  color: #fff;
   padding: 2em;
-  font-size: 2.3em;
-  letter-spacing: 10px;
-  opacity: 0.6;
+  font-size: 6em;
+  letter-spacing: 5px;
+  font-weight: 750;
+  -webkit-text-stroke: 1px rgb(38, 38, 38);
+  opacity: 0.7;
 }
 
 .about,
@@ -157,6 +142,9 @@ body::-webkit-scrollbar-thumb {
   margin: 5px 10px;
   line-height: 1.8;
 }
+.contact p {
+  margin-top: 30px;
+}
 .contact h1,
 .about h1 {
   font-size: 2em;
@@ -186,6 +174,7 @@ body::-webkit-scrollbar-thumb {
 .skills h3 {
   transform: rotate(270deg);
   color: rgb(255, 165, 0);
+  border-bottom: 1px solid rgb(255, 255, 255);
 }
 
 .skills > div:before {
@@ -206,7 +195,6 @@ a {
   background: #ffa500;
   margin: 5px 0px 40px 10px;
   padding: 1em 2em;
-  color: #fff;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
@@ -251,34 +239,35 @@ a {
 .modal-body {
   padding: 10px 20px;
   display: flex;
+  flex-wrap: wrap;
 }
 .modal-body > div {
   width: 50%;
   height: 100%;
   object-fit: cover;
 }
+.maria,
+.tzika {
+  min-height: 35vh;
+}
 .maria {
   background: url("../img/bench.gif") center/cover;
-  width: 100vw;
-  min-height: 50vh;
 }
 .tzika {
   background: url("../img/tzika.gif") center/cover;
-  width: 100vw;
-  min-height: 50vh;
 }
 .modal-body > div:nth-child(2) {
   object-fit: cover;
 }
 .modal-footer {
-  padding: 10px;
-  text-align: center;
+  padding: 15px;
+  text-align: right;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-top: 1px solid #d6d6d64a;
 }
 
 .close {
-  color: rgb(226, 226, 226);
   float: right;
   font-size: 2em;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
@@ -294,17 +283,17 @@ a {
 }
 
 @media only screen and (max-width: 1024px) {
-  .modal-body {
-    display: block;
-  }
   .modal-body > div {
     width: 100%;
   }
   .content h2 {
-    font-size: 1.3em;
+    font-size: 4em;
   }
 }
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 732px) {
+  .content h2 {
+    font-size: 1.5em;
+  }
   body {
     font-size: 14px;
   }
