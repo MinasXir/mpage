@@ -182,7 +182,7 @@ body::-webkit-scrollbar-thumb {
   content: "";
   height: calc(100% + 10px);
   width: calc(100% + 10px);
-  border: 8px dashed #ffff;
+  border: 8px dashed #ffa500;
   top: -13px;
   left: -13px;
   border-radius: inherit;
