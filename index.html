@@ -4,55 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minas Xirakias</title>
-      <link rel="icon" type="image/png" href="./public/img/ss.png" sizes="16x16" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./public/img/ss.png"
+      sizes="16x16"
+    />
     <link rel="stylesheet" href="./public/style/style.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
-          integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
-          crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
+    <meta property="og:image" content="./public/img/hero.jpg" />
   </head>
   <body>
-<div class="links">
-  <div route="/about">
-    <div route="/about" class="content">
-      <h2 route="/about">ABOUT</h2>
+    <div class="links">
+      <div route="/about">
+        <div route="/about" class="content">
+          <h2 route="/about">ABOUT</h2>
+        </div>
+      </div>
+      <div route="/contact">
+        <div route="/contact" class="content">
+          <h2 route="/contact">CONTACT</h2>
+        </div>
+      </div>
     </div>
-  </div>
-  <div route="/contact">
-    <div route="/contact" class="content">
-      <h2 route="/contact">CONTACT</h2>
+    <div id="view"></div>
+    <div class="intro">
+      <div class="intro-text">
+        <h1 class="hide">
+          <span class="text">Creating inovation</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">For Everyday</span>
+        </h1>
+        <h1 class="hide">
+          <span class="text">people.</span>
+        </h1>
+      </div>
     </div>
-  </div>
-</div>
-<div id="view"></div>
-  <div class="intro">
-    <div class="intro-text">
-      <h1 class="hide">
-        <span class="text">Creating inovation</span>
-      </h1>
-      <h1 class="hide">
-        <span class="text">For Everyday</span>
-      </h1>
-      <h1 class="hide">
-        <span class="text">people.</span>
-      </h1>
-    </div>
-  </div>
-  <div class="slider"></div>
+    <div class="slider"></div>
     <script>
       const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
-        tl.to(".text", { y: "0%", duration: 1, stagger: 0.25 });
-        tl.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 });
-        tl.to(".intro", { y: "-100%", duration: 1 }, "-=1");
-        tl.fromTo(".links > div", { opacity: 0 }, { opacity: 1, duration: 3 }, "-=1");
+      tl.to(".text", { y: "0%", duration: 1, stagger: 0.25 });
+      tl.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 });
+      tl.to(".intro", { y: "-100%", duration: 1 }, "-=1");
+      tl.fromTo(
+        ".links > div",
+        { opacity: 0 },
+        { opacity: 1, duration: 3 },
+        "-=1"
+      );
       function deleteIntro() {
-          const intro = document.querySelector(".intro");
-          if (intro) intro.remove();
-          const slider = document.querySelector(".slider");
-          if (slider) slider.remove();
+        const intro = document.querySelector(".intro");
+        if (intro) intro.remove();
+        const slider = document.querySelector(".slider");
+        if (slider) slider.remove();
       }
-    
+
       setTimeout(() => {
-       deleteIntro()
+        deleteIntro();
       }, 3500);
 
       window.addEventListener("DOMContentLoaded", (event) => {
@@ -228,7 +241,7 @@
           window.addEventListener("popstate", (event) => {
             renderPage();
             homeNav();
-            if (window.location.pathname === "/about") popUp()
+            if (window.location.pathname === "/about") popUp();
           });
         }
         browserbutton();
@@ -240,17 +253,20 @@
           const modalBtn = document.querySelectorAll(".button");
           const closeBtn = document.querySelectorAll(".close");
           // Events
-          modalBtn.forEach((mobtn)=>{mobtn.addEventListener("click", openModal)})
+          modalBtn.forEach((mobtn) => {
+            mobtn.addEventListener("click", openModal);
+          });
           closeBtn.forEach((close) => {
-            close.addEventListener("click", closeModal)})
+            close.addEventListener("click", closeModal);
+          });
           window.addEventListener("click", outsideClick);
           // Open
           function openModal(e) {
-             window.scrollTo(0, 0);
-            if(e.target.attributes[0].value === "ena")
-            modal[0].style.display = "block";
+            window.scrollTo(0, 0);
+            if (e.target.attributes[0].value === "ena")
+              modal[0].style.display = "block";
             if (e.target.attributes[0].value === "dio")
-            modal[1].style.display = "block";
+              modal[1].style.display = "block";
           }
           // Close
           function closeModal() {
@@ -262,7 +278,7 @@
             if (e.target == modal[0]) {
               modal[0].style.display = "none";
             }
-            if (e.target == modal[1]){
+            if (e.target == modal[1]) {
               modal[1].style.display = "none";
             }
           }
@@ -270,7 +286,6 @@
         if (window.location.pathname === "/about") {
           popUp();
         }
-
       });
     </script>
   </body>
