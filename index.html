@@ -116,10 +116,14 @@
             name: "About",
             class: "about",
             content: () => {
-              return ` <div class="goHome">&#8678</div>
-              <h1>About me</h1>
+              return ` 
+              <div class="aboutContent">
+              <div class="goHome">&#8678</div>
+              <h1>About</h1>
               <p>My name is Minas and I live in the Netherlands.
                 I enjoy creating interactive user interfaces for both mobile and desktop with all modern javascript frameworks and libriaries, even though I prefer react for web and react-native for mobile apps as front end solutions. From server side prespective I keep the javascript stack and  use node.js with mongoose in order to talk to a mongoDB database. While web development is my favourite IT path, I do enjoy messing around with totally different fields such as UI design, graphic design, linux, Ansible and docker.</p>
+                <br>
+                <br>
                 <br>
               <h1>Skills</h1>
               <div class="skills">
@@ -129,12 +133,16 @@
              React, Polymer, Angular, jQuery,
               Node.js, Mongoose, PHP(basic)</p>
               </div>
+              <br>
               <div><h3>Design</h3>
               <p>Photoshop, Illustrator, InDesign,
              Camtasia studio</p></div>
+             <br>
               <div><h3>DevOps</h3>
               <p>Git, Linux, Windows, putty, Ansible, Docker</p></div>
               </div>
+              <br>
+              <br>
               <br>
               <h1>Projects</h1>
               <button ena="ena" id="modal-btn" class="button">Tzika design</button>
@@ -148,8 +156,7 @@
                 <div>
               <p>Glykeria Tzika is an interior desginer.She wanted a simple and modern website to showcase her projects. I created it with wordpress and some custom css and javascript. I also used photoshop and illustrator for this project.</p>
               </div>
-              <div class="tzika">
-                </div>
+              <div class="tzika"></div>
               </div>
               <div class="modal-footer">
               <h3><a href="https://tzikadesign.gr/" target="blank"> Check the website</a> </h3>
@@ -167,14 +174,14 @@
                 <div>
               <p>The-benchmark started as a fashion blog and later on, got e-commerce characteristics. I created this website with wordpress cms but also used html5, css3, javascript and Adobe Illustrator.</p>
               </div>
-             <div class="maria">
-                </div>
+             <div class="maria"></div>
               </div>
               <div class="modal-footer">
               <h3><a href="https://the-benchmark.com/" target="blank"> Check the website</a></h3>
               </div>
               </div>
-              </div>
+               </div>
+               </div>
               `;
             },
           },
@@ -183,7 +190,9 @@
             name: "Contact",
             class: "contact",
             content: () => {
-              return `<div class="goHome">&#8678</div>
+              return `
+              <div class="aboutContact">
+              <div class="goHome">&#8678</div>
               <p>Feel free to contact me anytime , I will do my best to reply as soon as possible.<br>
               Send me an email by clicking here <a href="mailto:minasxirak@gmail.com">minasxirak@gmail.com</a><br>
               Or send me a message on the bellow social media
@@ -191,6 +200,7 @@
               <a href="https://www.linkedin.com/in/minas-xirakias-5578b8135/" target="blank">LinkedIn</a>
                             <a href="https://github.com/MinasXir" target="blank">Github</a>
               </p>
+              </div>
               `;
             },
           },
@@ -259,22 +269,26 @@
           closeBtn.forEach((close) => {
             close.addEventListener("click", closeModal);
           });
-          window.addEventListener("click", outsideClick);
+          modal.forEach((mod) => {
+            mod.addEventListener("click", outsideClick);
+          });
           // Open
           function openModal(e) {
             window.scrollTo(0, 0);
             if (e.target.attributes[0].value === "ena")
               modal[0].style.display = "block";
             if (e.target.attributes[0].value === "dio")
-              modal[1].style.display = "block";
+              modal[1].style.display = "block"; 
           }
           // Close
           function closeModal() {
+            window.scrollTo(0, 2000);
             modal[0].style.display = "none";
             modal[1].style.display = "none";
           }
           // Close If Outside Click
           function outsideClick(e) {
+            window.scrollTo(0, 2000);
             if (e.target == modal[0]) {
               modal[0].style.display = "none";
             }
