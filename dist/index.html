@@ -10,13 +10,13 @@
       href="./public/img/ss.png"
       sizes="16x16"
     />
-    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="./public/style/style.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
       integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
       crossorigin="anonymous"
     ></script>
-    <meta property="og:image" content="img/hero.jpg" />
+    <meta property="og:image" content="./public/img/hero.jpg" />
   </head>
   <body>
     <div class="links">
@@ -107,7 +107,7 @@
         };
         const myFirstRouter = new Router("myFirstRouter", [
           {
-            path: "/",
+            path: "/mpage/",
             name: "Home",
           },
           {
@@ -218,7 +218,7 @@
         ]);
         //Render the correct content based on pathname url
         function renderPage() {
-          if (window.location.pathname === "/") {
+          if (window.location.pathname === "/mpage/") {
             return (view.innerHTML = "");
           }
           if (window.location.pathname === "/about") {
@@ -248,7 +248,7 @@
             btns[i].addEventListener(
               "click",
               () => {
-                window.history.pushState({}, "name", "/");
+                window.history.pushState({}, "name", "/mpage/");
                 document.body.classList.add("hmm");
                 renderPage();
               },
