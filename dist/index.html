@@ -152,7 +152,7 @@
               <h1>About</h1>
               <p>My name is Minas and I live in the Netherlands.
                 I enjoy creating interactive user interfaces for both mobile and desktop with all modern javascript frameworks and libriaries, even though I prefer react for web and react-native for mobile apps as front end solutions. From server side prespective I keep the javascript stack and  use node.js with mongoose in order to talk to a mongoDB database. While web development is my favourite game, I do enjoy messing around with fields such as UI design, graphic design, video editing.</p>
-              <br><br><br><br>
+              <br><br><hr><br><br><br>
               <h1>Skills</h1>
               <div class="skills">
               ${myFirstRouter.routes[1].skillsContent
@@ -165,7 +165,7 @@
                 )
                 .join("")}
               </div>
-              <br><br><br><br>
+              <br><br><br><br><br><br><br>
               <h1>Projects</h1>
               <button ena="ena" id="modal-btn" class="button">Tzika design</button>
               <button ena="dio" id="modal-btn" class="button">The-benchmark</button>
@@ -252,8 +252,9 @@
         //back browser button
         function browserbutton() {
           window.addEventListener("popstate", (event) => {
+          window.history.pushState({}, "name", "/mpage/");
             renderPage();
-            if (window.location.pathname === "/about") popUp();
+            console.log(window.history)
           });
         }
         browserbutton();
