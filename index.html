@@ -10,13 +10,13 @@
       href="./public/img/ss.png"
       sizes="16x16"
     />
-    <link rel="stylesheet" href="./public/style/style.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
       integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
       crossorigin="anonymous"
     ></script>
-    <meta property="og:image" content="./public/img/hero.jpg" />
+    <meta property="og:image" content="img/hero.jpg" />
   </head>
   <body>
     <div class="links">
@@ -107,7 +107,7 @@
         };
         const myFirstRouter = new Router("myFirstRouter", [
           {
-            path: "/mpage/",
+            path: "/",
             name: "Home",
           },
           {
@@ -218,7 +218,7 @@
         ]);
         //Render the correct content based on pathname url
         function renderPage() {
-          if (window.location.pathname === "/mpage/") {
+          if (window.location.pathname === "/") {
             return (view.innerHTML = "");
           }
           if (window.location.pathname === "/about") {
@@ -248,7 +248,7 @@
             btns[i].addEventListener(
               "click",
               () => {
-                window.history.pushState({}, "name", "/mpage/");
+                window.history.pushState({}, "name", "/");
                 document.body.classList.add("hmm");
                 renderPage();
               },
@@ -310,22 +310,20 @@
         }
         if (window.location.pathname === "/about") {
           popUp();
-        } 
-        function scrollshit() {
-        var buttonBottom = document.querySelector('.skills');
-        var introPOSITION = buttonBottom.getBoundingClientRect().top;
-        var screenposition = window.innerHeight/1.08;
-         console.log(screenposition)
-        console.log(introPOSITION)
-        var goHome = document.querySelector('.goHome');
-        if (introPOSITION < screenposition) {
-          goHome.classList.add('leftBack');
         }
-                if (introPOSITION > screenposition) {
-                goHome.classList.remove('leftBack');
-              }
-      }
-    window.addEventListener('scroll', scrollshit);
+        function scrollshit() {
+          var buttonBottom = document.querySelector(".skills");
+          var introPOSITION = buttonBottom.getBoundingClientRect().top;
+          var screenposition = window.innerHeight / 1.2;
+          var goHome = document.querySelector(".goHome");
+          if (introPOSITION < screenposition) {
+            goHome.classList.add("leftBack");
+          }
+          if (introPOSITION > screenposition / 1.2) {
+            goHome.classList.remove("leftBack");
+          }
+        }
+        window.addEventListener("scroll", scrollshit);
       });
     </script>
   </body>
