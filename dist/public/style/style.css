@@ -120,6 +120,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 4em;
   display: inline-block;
   cursor: pointer;
+  width: 100px;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
     0 0 40px rgb(255, 174, 0), 0 0 80px rgb(255, 102, 0),
     0 0 90px rgb(255, 174, 0), 0 0 100px rgb(255, 136, 0),
@@ -133,6 +134,9 @@ body::-webkit-scrollbar-thumb {
   100% {
     transform: translateY(600px);
     margin-left: -90px;
+    position: sticky;
+    top: -3%;
+    left: 0;
   }
 }
 
