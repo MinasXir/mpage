@@ -2,6 +2,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #161616;
   color: #dddddd;
   overflow-x: hidden; /* Hide scrollbars */
   font-family: "B612", sans-serif;
@@ -56,7 +57,6 @@ body::-webkit-scrollbar-thumb {
 }
 .links {
   background: url("../img/hero.jpg") center/cover;
-  filter: brightness(50%);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -113,37 +113,44 @@ body::-webkit-scrollbar-thumb {
   top: 0px;
   z-index: 2;
   background-color: #161616;
+}
+.about {
+  animation: fadeInNewPage 1.5s;
+}
+.contact {
   animation: fadeInNewPage 1s;
 }
 
 .goHome {
-  font-size: 4em;
+  position: sticky;
+  top: 0;
+  left: 0;
+  font-size: 3.5em;
   display: inline-block;
   cursor: pointer;
-  width: 100px;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
-    0 0 40px rgb(255, 174, 0), 0 0 80px rgb(255, 102, 0),
-    0 0 90px rgb(255, 174, 0), 0 0 100px rgb(255, 136, 0),
-    0 0 150px rgb(255, 136, 0);
   transition: 1s;
+  color: rgb(255, 165, 0);
 }
 .leftBack {
-  animation: backbut 1s ease-in-out forwards;
+  animation: backbut 0.5s ease-in-out forwards;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 @keyframes backbut {
   100% {
-    transform: translateY(600px);
     margin-left: -90px;
-    position: sticky;
-    top: -3%;
-    left: 0;
   }
 }
 
 .aboutContent,
 .contactContent {
-  width: 80vw;
+  width: 70vw;
   margin: 0 auto;
+}
+.aboutContent h1 {
+  color: rgb(255, 165, 0);
+  font-size: 3em;
 }
 .aboutContent > p:not(.skills) {
   font-size: 1.6em;
@@ -161,12 +168,20 @@ body::-webkit-scrollbar-thumb {
 
 @keyframes fadeInNewPage {
   0% {
-    -webkit-clip-path: polygon(0 0, 100% 0%, 0 0, 0 100%);
-    clip-path: polygon(0 0, 100% 0%, 0 0, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  25% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 30%);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 30%);
+  }
+  50% {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+    clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
   }
   100% {
-    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 .skills {
@@ -177,7 +192,9 @@ body::-webkit-scrollbar-thumb {
 .skills > div {
   height: 15vh;
   width: 20vw;
-  border: 8px dashed #ffa500;
+  box-shadow: 0 2.8px 2.2px rgba(109, 109, 109, 0.034),
+    0 6.7px 5.3px rgba(146, 146, 146, 0.048),
+    0 12.5px 10px rgba(163, 163, 163, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -193,11 +210,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 a {
-  color: #ffa500;
+  color: rgb(255, 165, 0);
   text-decoration: none;
 }
 .button {
-  background: #ffa500;
+  background: #ffffff;
   padding: 1em 2em;
   margin-bottom: 50px;
   border: 0;
@@ -206,7 +223,8 @@ a {
 }
 
 .button:hover {
-  background: #2c2c2c;
+  background: rgb(255, 165, 0);
+  color: #fff;
 }
 
 .modal {

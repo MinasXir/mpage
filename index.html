@@ -124,7 +124,7 @@
               },
               {
                 skillTitle: "DevOps",
-                skills: `Git, Linux, Windows, putty, Ansible, Docker`,
+                skills: `Git, Linux, Windows, Ansible, Docker`,
               },
             ],
             modalContent: [
@@ -205,8 +205,8 @@
               <div class="goHome">&#8678</div>
               <br><br><br><br>
               <p>Feel free to contact me anytime , I will do my best to reply as soon as possible.<br>
-              Send me an email by clicking here <a href="mailto:minasxirak@gmail.com">minasxirak@gmail.com</a><br>
-              Or send me a message on the bellow social media
+              Send me an email by clicking here <a href="mailto:minasxirak@gmail.com">minasxirak@gmail.com</a>
+              Or let's get in touch via the bellow social media
               <br>
               <a href="https://www.linkedin.com/in/minas-xirakias-5578b8135/" target="blank">LinkedIn</a>
                             <a href="https://github.com/MinasXir" target="blank">Github</a>
@@ -312,14 +312,14 @@
           popUp();
         }
         function scrollshit() {
-          var buttonBottom = document.querySelector(".skills");
+          var buttonBottom = document.querySelector(".aboutContent h1");
           var introPOSITION = buttonBottom.getBoundingClientRect().top;
           var screenposition = window.innerHeight / 1.2;
           var goHome = document.querySelector(".goHome");
           if (introPOSITION < screenposition) {
             goHome.classList.add("leftBack");
           }
-          if (introPOSITION > screenposition / 1.2) {
+          if (introPOSITION > screenposition/6) {
             goHome.classList.remove("leftBack");
           }
         }
