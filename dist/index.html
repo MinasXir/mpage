@@ -147,7 +147,7 @@
             content: () => {
               return ` 
               <div class="aboutContent">
-              <div class="goHome">&#8678</div>
+              <div class="goHome">&#10065</div>
               <br><br><br>
               <h1>About</h1>
               <p>My name is Minas and I live in the Netherlands.
@@ -202,7 +202,7 @@
             content: () => {
               return `
               <div class="contactContent">
-              <div class="goHome">&#8678</div>
+              <div class="goHome">&#10065</div>
               <br><br><br><br>
               <p>Feel free to contact me anytime , I will do my best to reply as soon as possible.<br>
               Send me an email by clicking here <a href="mailto:minasxirak@gmail.com">minasxirak@gmail.com</a>
@@ -222,19 +222,11 @@
             return (view.innerHTML = "");
           }
           if (window.location.pathname === "/about") {
-            const welcomeSection = document.querySelector(".welcomeSection");
-            if (welcomeSection) {
-              welcomeSection.remove();
-            }
             return (view.innerHTML = `<div class="${
               myFirstRouter.routes[1].class
             }">${myFirstRouter.routes[1].content()} </div>`);
           }
           if (window.location.pathname === "/contact") {
-            const welcomeSection = document.querySelector(".welcomeSection");
-            if (welcomeSection) {
-              welcomeSection.remove();
-            }
             return (view.innerHTML = `<div class="${
               myFirstRouter.routes[2].class
             }">${myFirstRouter.routes[2].content()} </div>`);
@@ -261,7 +253,6 @@
         function browserbutton() {
           window.addEventListener("popstate", (event) => {
             renderPage();
-            homeNav();
             if (window.location.pathname === "/about") popUp();
           });
         }
@@ -312,10 +303,10 @@
           popUp();
         }
         function scrollshit() {
-          var buttonBottom = document.querySelector(".aboutContent h1");
-          var introPOSITION = buttonBottom.getBoundingClientRect().top;
-          var screenposition = window.innerHeight / 1.2;
-          var goHome = document.querySelector(".goHome");
+          const buttonBottom = document.querySelector(".aboutContent h1");
+          const introPOSITION = buttonBottom.getBoundingClientRect().top;
+          const screenposition = window.innerHeight / 1.2;
+          const goHome = document.querySelector(".goHome");
           if (introPOSITION < screenposition) {
             goHome.classList.add("leftBack");
           }
