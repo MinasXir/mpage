@@ -124,21 +124,31 @@ body::-webkit-scrollbar-thumb {
     0 0 40px rgb(255, 174, 0), 0 0 80px rgb(255, 102, 0),
     0 0 90px rgb(255, 174, 0), 0 0 100px rgb(255, 136, 0),
     0 0 150px rgb(255, 136, 0);
+  transition: 1s;
+}
+.leftBack {
+  animation: backbut 1s ease-in-out forwards;
+}
+@keyframes backbut {
+  100% {
+    transform: translateY(600px);
+    margin-left: -90px;
+  }
 }
 
 .aboutContent,
-.aboutContact {
+.contactContent {
   width: 80vw;
   margin: 0 auto;
 }
-
 .aboutContent > p:not(.skills) {
   font-size: 1.6em;
   line-height: 1.8;
   font-weight: 500;
   letter-spacing: 0.011em;
+  margin: 0;
 }
-.aboutContact > p:not(.skills) {
+.contactContent > p:not(.skills) {
   font-size: 1.6em;
   line-height: 1.8;
   font-weight: 500;
