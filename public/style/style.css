@@ -8,6 +8,7 @@ body {
   font-family: "B612", sans-serif;
   box-sizing: border-box;
   perspective: 25px;
+  scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
   width: 10px;
@@ -129,6 +130,15 @@ body::-webkit-scrollbar-thumb {
   display: inline-block;
   cursor: pointer;
   transition: 1s;
+  animation: backbutback 0.2s ease-in-out forwards;
+}
+@keyframes backbutback {
+  0% {
+    margin-left: -80px;
+  }
+  100% {
+    margin-left: 0px;
+  }
 }
 .sh-home {
   background: rgb(255, 165, 0);
@@ -166,7 +176,7 @@ body::-webkit-scrollbar-thumb {
   width: 0;
 }
 .leftBack {
-  animation: backbut 0.5s ease-in-out forwards;
+  animation: backbut 0.3s ease-in-out forwards;
   position: sticky;
   top: 15px;
   left: 5px;
@@ -177,7 +187,8 @@ body::-webkit-scrollbar-thumb {
   }
 }
 hr {
-  width: 15vw;
+  width: 45vw;
+  opacity: 0.5;
 }
 .aboutContent,
 .contactContent {
@@ -188,18 +199,12 @@ hr {
   color: rgb(255, 165, 0);
   font-size: 3em;
 }
-.aboutContent > p:not(.skills) {
+p {
   font-size: 1.6em;
   line-height: 1.8;
   font-weight: 500;
   letter-spacing: 0.011em;
   margin: 0;
-}
-.contactContent > p:not(.skills) {
-  font-size: 1.6em;
-  line-height: 1.8;
-  font-weight: 500;
-  letter-spacing: 0.011em;
 }
 
 @keyframes fadeInNewPage {
@@ -241,12 +246,13 @@ hr {
 }
 .skills p {
   margin: 3px;
+  font-size: 1.1em;
   line-height: 1.4;
 }
 .skills h3 {
   transform: rotate(270deg);
   color: rgb(255, 165, 0);
-  border-bottom: 1px solid rgb(33, 33, 33);
+  border-bottom: 1px solid rgba(123, 123, 123, 0.315);
 }
 
 a {
@@ -266,7 +272,7 @@ a {
 }
 
 .button:hover {
-  background: rgb(255, 165, 0);
+  background: rgb(216, 216, 216);
 }
 
 .modal {
@@ -306,7 +312,6 @@ a {
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
-  font-size: 1.8em;
 }
 .modal-body > div {
   width: 50%;
@@ -337,15 +342,6 @@ a {
 .close {
   float: right;
   font-size: 2em;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #0ff,
-    0 0 80px rgb(0, 51, 255), 0 0 90px rgb(0, 38, 255),
-    0 0 100px rgb(0, 72, 255), 0 0 150px rgb(0, 60, 255);
-}
-
-.close:hover,
-.close:focus {
-  color: rgb(214, 214, 214);
-  text-decoration: none;
   cursor: pointer;
 }
 
@@ -369,12 +365,12 @@ a {
     height: 35vh;
     margin-top: 35px;
   }
-  body {
-    font-size: 1.1em;
+  p {
+    font-size: 1.5em;
   }
 }
 @media only screen and (min-width: 1800px) {
   body {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 }

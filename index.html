@@ -311,11 +311,13 @@
           if (introPOSITION < screenposition) {
             goHome.classList.add("leftBack");
           }
-          if (introPOSITION > screenposition/6) {
+          if (introPOSITION > screenposition/7) {
             goHome.classList.remove("leftBack");
           }
         }
-        window.addEventListener("scroll", scrollshit);
+        window.addEventListener("scroll", () => {
+          if (window.location.pathname === "/about") scrollshit()
+        });
       });
     </script>
   </body>
