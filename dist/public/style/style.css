@@ -175,7 +175,7 @@ body::-webkit-scrollbar-thumb {
   width: 0;
 }
 .leftBack {
-  animation: backbut 0.3s ease-in-out forwards;
+  animation: backbut 0.2s ease-in-out forwards;
   position: sticky;
   top: 15px;
   left: 5px;
@@ -186,7 +186,7 @@ body::-webkit-scrollbar-thumb {
   color: #181818;
   font-size: 2em;
   font-weight: lighter;
-  top: 80%;
+  top: 70%;
   float: right;
   cursor: pointer;
   margin-right: -50px;
@@ -252,21 +252,28 @@ p {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-evenly;
   border-radius: 5px;
 }
+.skillsline {
+  width: 1%;
+  height: 100%;
+  background-color: rgba(124, 124, 124, 0.315);
+}
 .skills p {
-  margin: 3px;
-  font-size: 1.2em;
+  margin-left: 16px;
+  font-size: 1.1em;
   line-height: 1.4;
+  width: 80%;
+  opacity: 0.9;
 }
 .skills h3 {
   font-size: 1.2em;
   transform: rotate(270deg);
+  width: 18%;
   color: #181818;
   -webkit-text-stroke: 0.1px #44444459;
-  border-bottom: 1px solid rgba(73, 73, 73, 0.315);
 }
 
 a {
@@ -278,9 +285,10 @@ a {
   margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
-  width: 280px;
+  width: 100%;
 }
 .button {
+  background: rgb(216, 216, 216);
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
@@ -288,11 +296,13 @@ a {
   padding: 1em 2em;
   border: 0;
   border-radius: 5px;
+  color: rgb(65, 65, 65);
+  font-size: 0.8em;
   cursor: pointer;
 }
 
 .button:hover {
-  background: rgb(216, 216, 216);
+  background: rgb(202, 202, 202);
 }
 
 .modal {
