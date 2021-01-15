@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=B612&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap");
 body {
   margin: 0;
   padding: 0;
   background-color: #dddddd;
   color: #444444;
   overflow-x: hidden; /* Hide scrollbars */
-  font-family: "B612", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   box-sizing: border-box;
   perspective: 25px;
   scroll-behavior: smooth;
@@ -126,15 +126,14 @@ body::-webkit-scrollbar-thumb {
 .goHome {
   position: sticky;
   top: 15px;
-  left: 5px;
-  display: inline-block;
   cursor: pointer;
+  display: inline-block;
   transition: 1s;
   animation: backbutback 0.2s ease-in-out forwards;
 }
 @keyframes backbutback {
   0% {
-    margin-left: -80px;
+    margin-left: -40px;
   }
   100% {
     margin-left: 0px;
@@ -181,6 +180,18 @@ body::-webkit-scrollbar-thumb {
   top: 15px;
   left: 5px;
 }
+
+.arrow {
+  position: sticky;
+  color: rgb(255, 165, 0);
+  font-size: 2em;
+  font-weight: lighter;
+  top: 90%;
+  float: right;
+  cursor: pointer;
+  margin-right: -50px;
+  text-shadow: 3px 4px 3px #1c1c1c36;
+}
 @keyframes backbut {
   100% {
     margin-left: -80px;
@@ -198,6 +209,7 @@ hr {
 .aboutContent h1 {
   color: rgb(255, 165, 0);
   font-size: 3em;
+  margin-bottom: 5px;
 }
 p {
   font-size: 1.6em;
@@ -246,18 +258,27 @@ p {
 }
 .skills p {
   margin: 3px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 1.4;
 }
 .skills h3 {
+  font-size: 1.2em;
   transform: rotate(270deg);
   color: rgb(255, 165, 0);
-  border-bottom: 1px solid rgba(123, 123, 123, 0.315);
+  -webkit-text-stroke: 0.1px #44444459;
+  border-bottom: 1px solid rgba(73, 73, 73, 0.315);
 }
 
 a {
   color: rgb(255, 165, 0);
   text-decoration: none;
+}
+.buttons {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 280px;
 }
 .button {
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -265,7 +286,6 @@ a {
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
   padding: 1em 2em;
-  margin-bottom: 50px;
   border: 0;
   border-radius: 5px;
   cursor: pointer;
@@ -353,7 +373,7 @@ a {
     font-size: 4em;
   }
 }
-@media only screen and (max-width: 732px) {
+@media only screen and (max-width: 768px) {
   .content h2 {
     font-size: 1.5em;
   }
@@ -362,8 +382,9 @@ a {
   }
   .skills > div {
     width: 70vw;
-    height: 35vh;
+    height: 40vh;
     margin-top: 35px;
+    font-size: 1.1em;
   }
   p {
     font-size: 1.5em;
