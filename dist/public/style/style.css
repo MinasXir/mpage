@@ -11,17 +11,17 @@ body {
   scroll-behavior: smooth;
 }
 body::-webkit-scrollbar {
-  width: 10px;
+  width: 13px;
   height: 8px;
   background-color: #aaa; /* or add it to the track */
 }
 
 /* Add a thumb */
 body::-webkit-scrollbar-thumb {
-  background: #ffa500;
+  background: #000000;
 }
 .intro {
-  background-color: #000000;
+  background-color: #181818;
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .hide {
-  background: black;
+  background: #181818;
   overflow: hidden;
 }
 
@@ -140,7 +140,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 .sh-home {
-  background: rgb(255, 165, 0);
+  background: #181818;
   display: inline-block;
   height: 15px;
   margin: 15px 3, 75px 0;
@@ -150,7 +150,7 @@ body::-webkit-scrollbar-thumb {
 }
 /* The roof */
 .sh-home:before {
-  border-bottom: solid 15px rgb(255, 165, 0);
+  border-bottom: solid 15px #181818;
   border-left: solid transparent 15px;
   border-right: solid transparent 15px;
   content: "";
@@ -183,10 +183,10 @@ body::-webkit-scrollbar-thumb {
 
 .arrow {
   position: sticky;
-  color: rgb(255, 165, 0);
+  color: #181818;
   font-size: 2em;
   font-weight: lighter;
-  top: 90%;
+  top: 80%;
   float: right;
   cursor: pointer;
   margin-right: -50px;
@@ -207,7 +207,7 @@ hr {
   margin: 0 auto;
 }
 .aboutContent h1 {
-  color: rgb(255, 165, 0);
+  color: #181818;
   font-size: 3em;
   margin-bottom: 5px;
 }
@@ -264,18 +264,18 @@ p {
 .skills h3 {
   font-size: 1.2em;
   transform: rotate(270deg);
-  color: rgb(255, 165, 0);
+  color: #181818;
   -webkit-text-stroke: 0.1px #44444459;
   border-bottom: 1px solid rgba(73, 73, 73, 0.315);
 }
 
 a {
-  color: rgb(255, 165, 0);
+  color: #ffffff;
   text-decoration: none;
 }
 .buttons {
   margin-top: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
   width: 280px;
