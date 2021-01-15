@@ -285,7 +285,7 @@ a {
   margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 270px;
 }
 .button {
   background: rgb(216, 216, 216);
