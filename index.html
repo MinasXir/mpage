@@ -148,10 +148,11 @@
               return ` 
               <div class="aboutContent">
               <div class="goHome"><p><i class="sh-home"></i></p></div>
+              <div class="arrow"></div>
               <br><br><br>
               <h1>About</h1>
               <p>My name is Minas and I live in the Netherlands.
-                I enjoy creating interactive user interfaces for both mobile and desktop with all modern javascript frameworks and libriaries, even though I prefer react for web and react-native for mobile apps as front end solutions. From server side prespective I keep the javascript stack and  use node.js with mongoose in order to talk to a mongoDB database. While web development is my favourite game, I do enjoy messing around with fields such as UI design, graphic design, video editing.</p>
+                I enjoy creating interactive user interfaces for both mobile and desktop with all modern javascript frameworks and libriaries, even though I prefer react for web and react-native for mobile apps as front end solutions. From server side prespective I keep the javascript stack and  use node.js with mongoose in order to talk to a mongoDB database. While web development is my favourite IT path, I do enjoy messing around with different fields such as UI design, graphic design, video creation and editing.</p>
                <br><br><br><br><hr><br><br><br>
               <h1>Skills</h1>
               <div class="skills">
@@ -167,8 +168,10 @@
               </div>
               <br><br><br><br><br><br><br>
               <h1>Projects</h1>
-              <button ena="ena" id="modal-btn" class="button">Tzika design</button>
+              <div class="buttons">
               <button ena="dio" id="modal-btn" class="button">The-benchmark</button>
+              <button ena="ena" id="modal-btn" class="button">Tzika design</button>
+              </div>
               ${myFirstRouter.routes[1].modalContent
                 .map(
                   (modal) => `
@@ -304,16 +307,27 @@
           popUp();
         }
         function scrollshit() {
-          const buttonBottom = document.querySelector(".aboutContent h1");
-          const introPOSITION = buttonBottom.getBoundingClientRect().top;
+          const toptext = document.querySelector(".aboutContent h1");
+          const tophr = document.querySelector("hr");
+          const introPOSITION = toptext.getBoundingClientRect().top;
+          const introPOSITIONhr = tophr.getBoundingClientRect().top;
           const screenposition = window.innerHeight / 1.2;
           const goHome = document.querySelector(".goHome");
+          const arrow = document.querySelector(".arrow")
           if (introPOSITION < screenposition) {
             goHome.classList.add("leftBack");
           }
           if (introPOSITION > screenposition/7) {
             goHome.classList.remove("leftBack");
           }
+          
+          if (introPOSITIONhr * 2.5 > screenposition) {
+            arrow.innerHTML = null;
+          }
+
+         if (introPOSITIONhr < screenposition / 7) {
+          arrow.innerHTML = `<p onclick="window.scrollTo(0, 0)">&#8593</p>`
+           }
         }
         window.addEventListener("scroll", () => {
           if (window.location.pathname === "/about") scrollshit()
