@@ -161,6 +161,7 @@
                   (skill) => `
               <div>
               <h3>${skill.skillTitle}</h3>
+              <div class="skillsline"></div>
               <p>${skill.skills}</p>
               </div>`
                 )
@@ -314,7 +315,7 @@
           const screenposition = window.innerHeight;
           const goHome = document.querySelector(".goHome");
           const arrow = document.querySelector(".arrow");
-          if (introPOSITION < screenposition) {
+          if (introPOSITION < screenposition * 0.3) {
             goHome.classList.add("leftBack");
           }
           if (introPOSITION > screenposition / 7) {
