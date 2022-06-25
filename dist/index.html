@@ -107,7 +107,7 @@
         };
         const myFirstRouter = new Router("myFirstRouter", [
           {
-            path: "/mpage/",
+            path: "/mpage",
             name: "Home",
           },
           {
@@ -222,7 +222,7 @@
         ]);
         //Render the correct content based on pathname url
         function renderPage() {
-          if (window.location.pathname === "/mpage/") {
+          if (window.location.pathname === "/mpage") {
             return (view.innerHTML = "");
           }
           if (window.location.pathname === "/about") {
